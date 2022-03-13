@@ -3,6 +3,7 @@ import Welcome from './pages/Welcome';
 import Products from './pages/Products';
 import MainHeader from './components/MainHeader';
 import ProductDetail from './pages/ProductDetail';
+import {Redirect} from 'react-router-dom/cjs/react-router-dom.min';
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <MainHeader />
       <main>
         <Switch>
+          <Route path="/" exact>
+            <Redirect to="/welcome" />
+          </Route>
           <Route path="/welcome">
             <Welcome />       
           </Route>
